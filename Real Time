@@ -1,8 +1,0 @@
-var dtk = 40;
-function modTick() {
-    dtk--;
-    if(dtk<=0) {
-        dtk=40;
-        Level.setTime(parseInt(Level.getTime()-39))
-    }
-}
