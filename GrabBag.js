@@ -1,3 +1,5 @@
+var shiled = false;
+
 function procCmd(cmd) {
 	var c = cmd.split(" ");
 	if(cmd == "blowup") {
@@ -42,5 +44,20 @@ function procCmd(cmd) {
 		if(Level.getGameMode() == 1) {
 			Level.setGameMode(0);
 		}
+	}
+	if(cmd == "heal") {
+		if(Level.getGameMode() == 1) {
+			var cc = parseInt(c[1]);
+			Entity.setHealth(getPlayerEnt(),Entity.getHealth(getPlayerEnt()) + cc);
+		}
+	}
+	if(cmd == "shield") {
+		shiled = true;
+	}
+}
+
+function attackHook(a,v) {
+	if(v == getPlayerEnt() && shiled == true) {
+		preventDefault();
 	}
 }
