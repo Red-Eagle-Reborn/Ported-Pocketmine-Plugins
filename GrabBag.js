@@ -46,7 +46,7 @@ function procCmd(cmd) {
 		}
 	}
 	if(cmd == "heal") {
-		if(Level.getGameMode() == 1) {
+		if(Level.getGameMode() == 0) {
 			var cc = parseInt(c[1]);
 			Entity.setHealth(getPlayerEnt(),Entity.getHealth(getPlayerEnt()) + cc);
 		}
